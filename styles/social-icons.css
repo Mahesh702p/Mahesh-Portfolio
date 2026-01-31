@@ -1,0 +1,65 @@
+/* Social Icon Links - System Tray Style */
+.social-icons {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.hero-footer {
+    position: absolute;
+    bottom: 4rem;
+    left: 0;
+    width: 100%;
+    /* Centers in the content area (left of terminal) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.connect-text {
+    text-align: center;
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 2px solid #00ffa0;
+    border-radius: 50%;
+    color: #00ffa0;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.social-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: #00ffa0;
+    transition: fill 0.3s ease;
+}
+
+/* Hover state - subtle background change only */
+.social-icon:hover {
+    background: rgba(0, 255, 160, 0.1);
+}
+
+/* Focus state for accessibility */
+.social-icon:focus {
+    outline: none;
+    background: rgba(0, 255, 160, 0.1);
+}

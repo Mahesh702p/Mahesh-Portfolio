@@ -1,0 +1,77 @@
+/* Oneko toggle button */
+#oneko-toggle {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+    z-index: 10;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Inner sprite container - sleeping cat when disabled */
+#oneko-toggle::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url('../oneko.gif');
+    background-position: -64px 0px;
+    /* sleeping sprite */
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    margin: 2px;
+    filter: invert(1);
+}
+
+#oneko-toggle:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+#oneko-toggle:hover::before {
+    filter: invert(0);
+}
+
+/* Active state - idle/alert cat sprite */
+#oneko-toggle.active::before {
+    filter: invert(0);
+    background-position: -96px -96px;
+    /* idle sprite */
+}
+
+#oneko-toggle.active {
+    background: white;
+}
+
+/* Resume button mirroring oneko toggle */
+#oneko-resume-btn {
+    width: auto;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 0 16px;
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#oneko-resume-btn:hover {
+    background: white;
+    color: var(--bg-primary);
+    transform: scale(1.05);
+}

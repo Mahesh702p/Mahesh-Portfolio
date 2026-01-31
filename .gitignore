@@ -1,0 +1,32 @@
+# Portfolio - Gitignore
+
+# Development
+node_modules/
+.DS_Store
+*.log
+npm-debug.log*
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+~*
+
+# Python cache (if any Python scripts)
+__pycache__/
+*.pyc
+
+# Build artifacts (if needed later)
+dist/
+build/
