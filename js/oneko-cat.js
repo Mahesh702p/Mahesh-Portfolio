@@ -12,7 +12,7 @@
 
   let nekoPosX = 32;
   let nekoPosY = 32;
-  
+
   let mousePosX = 0;
   let mousePosY = 0;
 
@@ -98,7 +98,7 @@
         persistPosition = JSON.parse(curScript.dataset.persistPosition.toLowerCase());
       }
     }
-  
+
     if (persistPosition) {
       let storedNeko = JSON.parse(window.localStorage.getItem("oneko"));
       if (storedNeko !== null) {
@@ -113,7 +113,7 @@
         nekoEl.style.backgroundPosition = storedNeko.bgPos;
       }
     }
-  
+
     nekoEl.id = "oneko";
     nekoEl.ariaHidden = true;
     nekoEl.style.width = "32px";
@@ -126,14 +126,14 @@
     nekoEl.style.zIndex = 2147483647;
 
     nekoEl.style.backgroundImage = `url(${nekoFile})`;
-    
+
     document.body.appendChild(nekoEl);
 
     document.addEventListener("mousemove", function (event) {
       mousePosX = event.clientX;
       mousePosY = event.clientY;
     });
-    
+
     if (persistPosition) {
       window.addEventListener("beforeunload", function (event) {
         window.localStorage.setItem("oneko", JSON.stringify({
@@ -149,7 +149,7 @@
         }));
       });
     }
-    
+
     window.requestAnimationFrame(onAnimationFrame);
   }
 
@@ -204,7 +204,7 @@
       }
       idleAnimation =
         avalibleIdleAnimations[
-          Math.floor(Math.random() * avalibleIdleAnimations.length)
+        Math.floor(Math.random() * avalibleIdleAnimations.length)
         ];
     }
 

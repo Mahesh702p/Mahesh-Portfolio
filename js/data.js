@@ -84,51 +84,50 @@ const portfolioData = {
 
     projects: [
         {
-            id: "ai-workforce-scheduling",
-            name: "AI Workforce Scheduling System",
-            description: "Designed and developed a multi-agent AI system using CrewAI framework with specialized agents (Workforce Analyst, Schedule Generator, Compliance Validator, Notification Formatter) to automate shift scheduling and leave management for 5 retail locations.",
+            id: "municipal-grievance-routing",
+            name: "Municipal Grievance Routing Engine",
+            description: "Engineered an automated data pipeline to scrape, clean, and structure 350K+ unstructured records from Twitter and government portals. Developed a Hybrid Neural Network (CNN + BiLSTM + Attention) achieving high-accuracy multi-class grievance classification across 30+ municipal categories. Built a RAG-powered query system for public policy analysis.",
             features: [
-                "Multi-agent AI architecture with specialized roles",
-                "Natural language voice command interface (Twilio+Gemini)",
-                "Real-time workforce data synchronization",
-                "PostgreSQL/Supabase database integration with parsing",
-                "Automated shift scheduling and compliance validation"
+                "Automated data pipeline for 350K+ unstructured records",
+                "Hybrid Neural Network (CNN + BiLSTM + Attention)",
+                "30+ municipal category classification",
+                "RAG-powered query system for policy analysis"
             ],
-            tech: ["CrewAI", "PostgreSQL", "FastAPI", "Multi-Agent AI", "Twilio", "Gemini"],
-            status: "complete",
-            github: "https://github.com/parthavi0601/defenestration",
-            demo: null,
-            highlight: true
-        },
-        {
-            id: "college-admission-chatbot",
-            name: "College Admission Chatbot",
-            description: "Developed an intelligent conversational AI system using Retrieval-Augmented Generation (RAG) architecture to provide personalized college admission guidance and information retrieval.",
-            features: [
-                "RAG-based information retrieval",
-                "Personalized guidance system",
-                "Streamlit web interface",
-                "Natural language understanding"
-            ],
-            tech: ["LangChain", "Streamlit", "Pydantic"],
-            status: "complete",
-            github: "https://github.com/Mahesh702p/tsecAA",
-            demo: null,
-            highlight: true
-        },
-        {
-            id: "municipal-complaint-classifier",
-            name: "Municipal Complaint Classifier",
-            description: "A Streamlit-based web application that uses Deep Learning (CNN) to automatically categorize municipal complaints (e.g., \"Pothole\", \"No Water\", \"Garbage\") and assign them to the correct department with a priority level.",
-            features: [
-                "CNN-based automated categorization",
-                "Streamlit web interface",
-                "Priority level assignment",
-                "Department allocation"
-            ],
-            tech: ["Python", "TensorFlow", "Streamlit", "CNN"],
+            tech: ["Python", "Web Scraping", "RAG", "Scikit-Learn"],
             status: "complete",
             github: "https://github.com/Mahesh702p/Municipal_Corporation_MPR",
+            demo: null,
+            highlight: true
+        },
+        {
+            id: "edupulse-analytics",
+            name: "EduPulse – Learning Behavior Analytics & Segmentation Engine",
+            description: "Built an end-to-end analytics pipeline to analyze user engagement patterns (session duration, drop-off points, completion rates) across learning modules. Applied clustering (K-Means, DBSCAN) to segment learners and identify content optimization opportunities.",
+            features: [
+                "End-to-end analytics pipeline",
+                "User engagement pattern analysis",
+                "K-Means & DBSCAN clustering",
+                "Learner segmentation & content optimization"
+            ],
+            tech: ["Python", "Pandas", "Scikit-Learn", "Seaborn", "Plotly"],
+            status: "complete",
+            github: null,
+            demo: null,
+            highlight: true
+        },
+        {
+            id: "ai-workforce-scheduler",
+            name: "AI-Powered Workforce Scheduler",
+            description: "Designed and implemented data models mapping complex scheduling constraints across workforce databases using PostgreSQL and SQLAlchemy. Built end-to-end automation workflows utilizing LLMs and multi-agent orchestration to optimize staff allocation decisions.",
+            features: [
+                "Complex scheduling constraint modeling",
+                "PostgreSQL & SQLAlchemy data models",
+                "LLM-powered automation workflows",
+                "Multi-agent staff allocation optimization"
+            ],
+            tech: ["FastAPI", "CrewAI", "LangChain", "PostgreSQL"],
+            status: "complete",
+            github: "https://github.com/parthavi0601/defenestration",
             demo: null,
             highlight: true
         }
@@ -175,7 +174,7 @@ const portfolioData = {
         linkedin: "mahesh-patel-0308b72ba",
         instagram: "mahesh_702p",
         leetcode: "mahesh_702p",
-        resume: "assets/mahesh_resume.pdf"
+        resume: "mahesh_wheeltrix.pdf"
     },
 
     art: [
@@ -184,171 +183,171 @@ const portfolioData = {
             title: "Radial Mandala",
             category: "Ink Art",
             description: "Symmetrical radial mandala in ink.",
-            image: "assets/art/19.png",
-            size: "18.8 MB"
+            image: "assets/art/19.jpg",
+            size: "0.4 MB"
         },
         {
             id: "art-2",
             title: "Divine Harmony",
             category: "Concept Art",
             description: "Concept art exploring divine themes.",
-            image: "assets/art/2.png",
-            size: "8.4 MB"
+            image: "assets/art/2.jpg",
+            size: "0.1 MB"
         },
         {
             id: "art-14",
             title: "Salute to Indian Heroes",
             category: "Patriotic Art",
             description: "Patriotic tribute to Indian heroes.",
-            image: "assets/art/14.png",
+            image: "assets/art/14.jpg",
             rotation: -90,
-            size: "12.8 MB"
+            size: "0.2 MB"
         },
         {
             id: "art-17",
             title: "Mahatma Gandhi Portrait",
             category: "Pencil Portrait",
             description: "Pencil study of Mahatma Gandhi.",
-            image: "assets/art/17.png",
-            size: "8.9 MB"
+            image: "assets/art/17.jpg",
+            size: "0.1 MB"
         },
         {
             id: "art-9",
             title: "Kitchen Still Life",
             category: "Watercolor",
             description: "Watercolor painting of common kitchen items.",
-            image: "assets/art/9.png",
+            image: "assets/art/9.jpg",
             rotation: -90,
-            size: "9.7 MB"
+            size: "0.1 MB"
         },
         {
             id: "art-1",
             title: "Ganesha Mandala",
             category: "Ink Art",
             description: "Intricate mandala design featuring Ganesha.",
-            image: "assets/art/1.png",
-            size: "8.1 MB"
+            image: "assets/art/1.jpg",
+            size: "0.2 MB"
         },
         {
             id: "art-20",
             title: "Ink Art",
             category: "Zentangle Art",
             description: "Detailed Zentangle patterns in ink.",
-            image: "assets/art/20.png",
+            image: "assets/art/20.jpg",
             rotation: -90,
-            size: "12.3 MB"
+            size: "0.2 MB"
         },
         {
             id: "art-3",
             title: "Save Nature",
             category: "Awareness Art",
             description: "Art piece focused on environmental awareness.",
-            image: "assets/art/3.png",
+            image: "assets/art/3.jpg",
             rotation: -90,
-            size: "22.6 MB"
+            size: "0.2 MB"
         },
         {
             id: "art-4",
             title: "Abstract Landscape",
             category: "Abstract Art",
             description: "Exploration of shapes and colors in a landscape format.",
-            image: "assets/art/4.png",
+            image: "assets/art/4.jpg",
             rotation: -90,
-            size: "16.1 MB"
+            size: "0.3 MB"
         },
         {
             id: "art-5",
             title: "Still Life Study",
             category: "Watercolor",
             description: "Watercolor study of still life objects.",
-            image: "assets/art/5.png",
-            size: "8.5 MB"
+            image: "assets/art/5.jpg",
+            size: "0.1 MB"
         },
         {
             id: "art-6",
             title: "Geometric T-Shirt Pattern",
             category: "Pattern Design",
             description: "Modern geometric design for apparel.",
-            image: "assets/art/6.png",
+            image: "assets/art/6.jpg",
             rotation: -90,
-            size: "12.6 MB"
+            size: "0.2 MB"
         },
         {
             id: "art-7",
             title: "Decorative Calligraphy Composition",
             category: "Calligraphy",
             description: "Artistic composition using calligraphy techniques.",
-            image: "assets/art/7.png",
-            size: "14.6 MB"
+            image: "assets/art/7.jpg",
+            size: "0.3 MB"
         },
         {
             id: "art-8",
             title: "Village Life Sketch",
             category: "Line Art",
             description: "Sketch depicting scenes from village life.",
-            image: "assets/art/8.png",
+            image: "assets/art/8.jpg",
             rotation: -90,
-            size: "10.0 MB"
+            size: "0.2 MB"
         },
         {
             id: "art-10",
             title: "Traditional Motif Design",
             category: "Folk Art",
             description: "Detailed traditional motif inspired by folk art.",
-            image: "assets/art/10.png",
-            size: "8.4 MB"
+            image: "assets/art/10.jpg",
+            size: "0.1 MB"
         },
         {
             id: "art-11",
             title: "Decorative Pot Illustration",
             category: "Folk Art",
             description: "Illustrative study of a decorated traditional pot.",
-            image: "assets/art/11.png",
-            size: "11.2 MB"
+            image: "assets/art/11.jpg",
+            size: "0.2 MB"
         },
         {
             id: "art-12",
             title: "Ganpati Bappa Morya",
             category: "Devotional Art",
             description: "Devotional art piece dedicated to Lord Ganesha.",
-            image: "assets/art/12.png",
+            image: "assets/art/12.jpg",
             rotation: -90,
-            size: "12.1 MB"
+            size: "0.2 MB"
         },
         {
             id: "art-13",
             title: "Frontline Heroes",
             category: "Social Awareness",
             description: "Art piece honoring frontline workers.",
-            image: "assets/art/13.png",
+            image: "assets/art/13.jpg",
             rotation: -90,
-            size: "13.0 MB"
+            size: "0.2 MB"
         },
         {
             id: "art-15",
             title: "Family Time",
             category: "Narrative Art",
             description: "Narrative illustration of a family gathering.",
-            image: "assets/art/15.png",
+            image: "assets/art/15.jpg",
             rotation: -90,
-            size: "9.9 MB"
+            size: "0.1 MB"
         },
         {
             id: "art-16",
             title: "Children at Play",
             category: "Illustrative Art",
             description: "Whimsical illustration of children playing.",
-            image: "assets/art/16.png",
+            image: "assets/art/16.jpg",
             rotation: -90,
-            size: "12.5 MB"
+            size: "0.2 MB"
         },
         {
             id: "art-18",
             title: "Chhatrapati Shivaji Maharaj",
             category: "Portrait",
             description: "Portrait of the visionary leader Shivaji Maharaj.",
-            image: "assets/art/18.png",
-            size: "9.7 MB"
+            image: "assets/art/18.jpg",
+            size: "0.2 MB"
         }
     ],
 
