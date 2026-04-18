@@ -43,7 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const btn = document.getElementById(btnId);
         if (btn) {
             btn.addEventListener('click', () => {
-                window.open(portfolioData.contact.resume, '_blank');
+                const a = document.createElement('a');
+                a.href = portfolioData.contact.resume;
+                a.download = 'Mahesh.pdf';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
             });
         }
     });

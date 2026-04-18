@@ -359,9 +359,13 @@ ${profile.bio}
         description: "Download resume",
         execute: (args) => {
             if (args && args[0] === 'resume') {
-                // Open in new tab to avoid browser security blocks
-                window.open(portfolioData.contact.resume, '_blank');
-                return `<span class="terminal-success">Opening resume.pdf...</span>`;
+                const a = document.createElement('a');
+                a.href = portfolioData.contact.resume;
+                a.download = 'Mahesh.pdf';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                return `<span class="terminal-success">Downloading Mahesh.pdf...</span>`;
             }
             return `<span class="terminal-error">download: specify 'resume'</span>`;
         }
