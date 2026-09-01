@@ -30,6 +30,14 @@ const portfolioData = {
             score: "88.5%",
             duration: "May 2021 – April 2023",
             current: false
+        },
+        {
+            institution: "Kudos Kids Secondary School",
+            location: "Mumbai",
+            degree: "Secondary School Certificate",
+            score: "92.60%",
+            duration: "Completed March 2021",
+            current: false
         }
     ],
 
