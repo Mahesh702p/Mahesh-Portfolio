@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const roleElement = document.querySelector('.terminal-role');
     if (roleElement) {
-        new TypeWriter(roleElement, ["Backend Developer", "Designer", "Data Analyst"]);
+        new TypeWriter(roleElement, ["Backend Developer", "AI Intern", "Data Analyst"]);
     }
 
     // Mobile art gallery expand/collapse

@@ -4,7 +4,7 @@ const portfolioData = {
     profile: {
         name: "Mahesh Patel",
         title: "AI & Data Science Student",
-        subtitle: "Backend Developer | Research Intern | Design Head",
+        subtitle: "Backend Developer | AI Intern | Placement Coordinator",
         bio: "Backend developer passionate about AI/ML, Linux systems, and clean scalable architectures. Currently pursuing AI&DS at Thadomal Shahani Engineering College (TSEC). Outside of that, drawing and creative work play a big role in how I think and express ideas. Always learning and exploring.",
         location: "Mumbai, India",
         email: "patelbhiyaram757@gmail.com",
@@ -19,7 +19,7 @@ const portfolioData = {
             institution: "Thadomal Shahani Engineering College",
             university: "Mumbai University",
             degree: "B.E in Artificial Intelligence and Data Science",
-            cgpa: "7.78",
+            cgpa: "8.23",
             duration: "August 2023 – June 2027",
             current: true
         },
@@ -86,48 +86,32 @@ const portfolioData = {
         {
             id: "municipal-grievance-routing",
             name: "Municipal Grievance Routing Engine",
-            description: "Engineered an automated data pipeline to scrape, clean, and structure 350K+ unstructured records from Twitter and government portals. Developed a Hybrid Neural Network (CNN + BiLSTM + Attention) achieving high-accuracy multi-class grievance classification across 30+ municipal categories. Built a RAG-powered query system for public policy analysis.",
+            description: "Built a multilingual NLP pipeline for automated grievance classification and department routing across Hindi, English, and Hinglish using a TextCNN + BiLSTM + Attention architecture with a custom Byte-Pair Encoding tokenizer. Integrated a FAISS-based RAG engine for contextual FAQ retrieval, enabling dynamic response generation without retraining.",
             features: [
-                "Automated data pipeline for 350K+ unstructured records",
-                "Hybrid Neural Network (CNN + BiLSTM + Attention)",
-                "30+ municipal category classification",
-                "RAG-powered query system for policy analysis"
+                "Multilingual NLP pipeline (Hindi, English, Hinglish)",
+                "TextCNN + BiLSTM + Attention architecture",
+                "Custom Byte-Pair Encoding tokenizer",
+                "FAISS-based RAG engine for contextual FAQ retrieval"
             ],
-            tech: ["Python", "Web Scraping", "RAG", "Scikit-Learn"],
+            tech: ["Python", "TensorFlow", "FAISS", "RAG", "Scikit-Learn"],
             status: "complete",
             github: "https://github.com/Mahesh702p/Municipal_Corporation_MPR",
             demo: null,
             highlight: true
         },
         {
-            id: "edupulse-analytics",
-            name: "EduPulse – Learning Behavior Analytics & Segmentation Engine",
-            description: "Built an end-to-end analytics pipeline to analyze user engagement patterns (session duration, drop-off points, completion rates) across learning modules. Applied clustering (K-Means, DBSCAN) to segment learners and identify content optimization opportunities.",
+            id: "warden-security",
+            name: "Warden – Security Log Analytics & Threat Detection",
+            description: "Built a security log parser in Python using custom regex to extract login and privilege escalation events from Linux system logs into SQLite. Created detection rules for SSH brute-force, botnet attacks, and compromised credentials, reducing log analysis time via automated HTML audit reports.",
             features: [
-                "End-to-end analytics pipeline",
-                "User engagement pattern analysis",
-                "K-Means & DBSCAN clustering",
-                "Learner segmentation & content optimization"
+                "Custom regex log parser for Linux system logs",
+                "SSH brute-force & botnet attack detection",
+                "Compromised credential identification",
+                "Automated HTML audit report generation"
             ],
-            tech: ["Python", "Pandas", "Scikit-Learn", "Seaborn", "Plotly"],
+            tech: ["Python", "SQLite", "Linux", "HTML5"],
             status: "complete",
-            github: null,
-            demo: null,
-            highlight: true
-        },
-        {
-            id: "ai-workforce-scheduler",
-            name: "AI-Powered Workforce Scheduler",
-            description: "Designed and implemented data models mapping complex scheduling constraints across workforce databases using PostgreSQL and SQLAlchemy. Built end-to-end automation workflows utilizing LLMs and multi-agent orchestration to optimize staff allocation decisions.",
-            features: [
-                "Complex scheduling constraint modeling",
-                "PostgreSQL & SQLAlchemy data models",
-                "LLM-powered automation workflows",
-                "Multi-agent staff allocation optimization"
-            ],
-            tech: ["FastAPI", "CrewAI", "LangChain", "PostgreSQL"],
-            status: "complete",
-            github: "https://github.com/parthavi0601/defenestration",
+            github: "https://github.com/Mahesh702p/Warden",
             demo: null,
             highlight: true
         }
@@ -135,21 +119,40 @@ const portfolioData = {
 
     experience: [
         {
-            role: "Research Intern",
-            organization: "Under Dr. Himani Deshpande",
+            role: "Artificial Intelligence Intern",
+            organization: "Hiranandani Group, Mumbai",
+            duration: "June 2026 - July 2026",
+            current: false,
+            description: "Built CardVault, a PWA to digitize and manage 1,000+ business cards using Google Gemini Vision API. Implemented smart search with AI query expansion, caching, and role-based access control. Contributed to a real-time Gate Check-In/Check-Out app and enterprise Purchase Order website.",
+            responsibilities: [
+                "Built CardVault PWA with Gemini Vision API",
+                "Smart search engine with AI query expansion",
+                "Gate Check-In/Check-Out application",
+                "Enterprise Purchase Order website"
+            ]
+        },
+        {
+            role: "AI/ML Research Intern",
+            organization: "Thadomal Shahani Engineering College, Mumbai",
             duration: "December 2025 - January 2026",
             current: false,
-            description: "Investigating Hybrid Graph Neural Network Architectures for complex, Heterophilous datasets",
+            description: "Conducted comparative study of GCNs, GATs, and hybrid models for node classification. Developed EAGRPO/KL-GRPO step-level gradient routing framework for RLVR, achieving 72.94% on MATH-500 and 15.83% on AIME 2025 on Qwen3-4B.",
             responsibilities: [
-                "Research on Graph Neural Network architectures",
-                "Working with heterophilous datasets",
-                "Developing hybrid GNN models",
-                "Performance analysis and optimization"
+                "Graph Neural Network architecture research",
+                "Reinforcement Learning via Verifiable Rewards (RLVR)",
+                "Step-level gradient routing framework (EAGRPO/KL-GRPO)",
+                "Benchmarking on MATH-500 and AIME 2025"
             ]
         }
     ],
 
     achievements: [
+        {
+            title: "Augenblick Hackathon 2026, Finalist",
+            date: "2026-03",
+            description: "Selected as a finalist at the Augenblick Hackathon 2026",
+            category: "competition"
+        },
         {
             title: "2nd Rank at IES MCRC Hackathon 2.0",
             date: "2025-03",
@@ -160,11 +163,18 @@ const portfolioData = {
 
     leadership: [
         {
-            role: "Senior Committee Member",
-            organization: "TSEC CodeTantra Committee",
-            duration: "March 2025 - present",
+            role: "Envoy and Placement Coordinator",
+            organization: "Training and Placement Cell - TSEC",
+            duration: "July 2026 - Present",
             current: true,
-            description: "Led the Design Team to establish the visual identity for the committee's flagship hackathon, creating a cohesive suite of assets including social media creatives, banners, T-shirts, certificates, and the event theme."
+            description: "Coordinated pre-placement talks and hiring protocols with companies while managing recruitment databases. Organized campus interviews and guided students on resumes, applications, and placement protocols."
+        },
+        {
+            role: "Design Head",
+            organization: "TSEC CodeTantra",
+            duration: "March 2025 - March 2026",
+            current: false,
+            description: "Led the design team for the flagship annual hackathon, coordinated cross-functional deliverables under tight deadlines, and contributed to the annual department magazine."
         }
     ],
 
@@ -174,7 +184,7 @@ const portfolioData = {
         linkedin: "mahesh-patel-0308b72ba",
         instagram: "mahesh_702p",
         leetcode: "mahesh_702p",
-        resume: "mahesh_wheeltrix.pdf"
+        resume: "Mahesh_Deloitte.pdf"
     },
 
     art: [
