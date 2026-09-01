@@ -114,6 +114,22 @@ const portfolioData = {
             github: "https://github.com/Mahesh702p/Warden",
             demo: null,
             highlight: true
+        },
+        {
+            id: "ai-workforce-scheduler",
+            name: "AI-Powered Workforce Scheduler",
+            description: "Designed and implemented data models mapping complex scheduling constraints across workforce databases using PostgreSQL and SQLAlchemy. Built end-to-end automation workflows utilizing LLMs and multi-agent orchestration to optimize staff allocation decisions.",
+            features: [
+                "Complex scheduling constraint modeling",
+                "PostgreSQL & SQLAlchemy data models",
+                "LLM-powered automation workflows",
+                "Multi-agent staff allocation optimization"
+            ],
+            tech: ["FastAPI", "CrewAI", "LangChain", "PostgreSQL"],
+            status: "complete",
+            github: "https://github.com/parthavi0601/defenestration",
+            demo: null,
+            highlight: true
         }
     ],
 
