@@ -1208,28 +1208,28 @@ html {
         align-items: center !important;
         margin-bottom: 2rem !important;
         margin-top: 4rem !important;
-        overflow: hidden !important; /* Lock it down */
+        overflow: hidden !important;
         width: 100vw !important;
         max-width: 100vw !important;
         box-sizing: border-box !important;
     }
 
     .ascii-name-main {
-        font-size: 1.7vw !important; 
-        line-height: 1.05 !important; 
-        letter-spacing: -0.02em !important;
+        font-size: 12px !important; /* Fixed size prevents sub-pixel gaps */
+        line-height: 0.95 !important; /* Pulls blocks vertically tight */
+        letter-spacing: -1px !important; /* Guarantees it fits within 320px even if Android clamps font to 12px */
         color: #00ffa0 !important;
         text-shadow: 0 0 12px rgba(0, 255, 160, 0.4) !important;
-        -webkit-text-stroke: 0.4px #00ffa0 !important; /* Bleeds the blocks together to fix subpixel gaps! */
+        -webkit-text-stroke: 0 !important; /* Remove stroke hack */
     }
 
     .ascii-name-sub {
-        font-size: 1.3vw !important;
-        line-height: 1.05 !important;
-        letter-spacing: -0.02em !important;
+        font-size: 10px !important;
+        line-height: 0.95 !important;
+        letter-spacing: -1px !important;
         color: #00ffa0 !important;
         text-shadow: 0 0 10px rgba(0, 255, 160, 0.3) !important;
-        -webkit-text-stroke: 0.3px #00ffa0 !important;
+        -webkit-text-stroke: 0 !important;
     }
 
     /* Center dynamic typer */
