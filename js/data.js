@@ -5,7 +5,7 @@ const portfolioData = {
         name: "Mahesh Patel",
         title: "AI & Data Science Student",
         subtitle: "Backend Developer | AI Intern | Placement Coordinator",
-        bio: "Backend developer passionate about AI/ML, Linux systems, and clean scalable architectures. Currently pursuing AI&DS at Thadomal Shahani Engineering College (TSEC). Outside of that, drawing and creative work play a big role in how I think and express ideas. Always learning and exploring.",
+        bio: "Backend developer passionate about AI/ML, Linux systems, and clean scalable architectures. Currently pursuing AI&DS at TSEC. Outside of that, drawing and creative work play a big role in how I think and express ideas. Always learning and exploring.",
         location: "Mumbai, India",
         email: "patelbhiyaram757@gmail.com",
         github: "https://github.com/Mahesh702p",
@@ -18,7 +18,7 @@ const portfolioData = {
         {
             institution: "Thadomal Shahani Engineering College",
             university: "Mumbai University",
-            degree: "B.E in Artificial Intelligence and Data Science",
+            degree: "B.E in AI & DS",
             cgpa: "8.23",
             duration: "August 2023 – June 2027",
             current: true
@@ -157,7 +157,7 @@ const portfolioData = {
         },
         {
             role: "AI/ML Research Intern",
-            organization: "Thadomal Shahani Engineering College, Mumbai",
+            organization: "TSEC, Mumbai",
             duration: "December 2025 - January 2026",
             current: false,
             description: "Conducted comparative study of GCNs, GATs, and hybrid models for node classification. Developed EAGRPO/KL-GRPO step-level gradient routing framework for RLVR, achieving 72.94% on MATH-500 and 15.83% on AIME 2025 on Qwen3-4B.",

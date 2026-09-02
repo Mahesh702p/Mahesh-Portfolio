@@ -913,15 +913,8 @@ BOOT SCREEN STYLES
 
 /* Mobile Terminal Overrides */
 @media (max-width: 768px) {
-    #terminal-overlay {
-        top: 50% !important;
-        left: 50% !important;
-        right: auto !important;
-        width: 95vw !important;
-        height: 60vh !important;
-        min-width: 0 !important;
-        min-height: 0 !important;
-        transform: translate(-50%, -50%) !important;
-        margin: 0;
+    #terminal-overlay,
+    #terminal-bg-penguin {
+        display: none !important;
     }
 }

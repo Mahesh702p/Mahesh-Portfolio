@@ -277,7 +277,7 @@
 /* ===== Enhanced Project Cards ===== */
 .project-highlight,
 .project-standard {
-    border: 2px solid #00ffa0;
+    border: 1px solid #00ffa0;
     position: relative;
 }
 

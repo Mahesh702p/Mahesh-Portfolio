@@ -63,3 +63,18 @@
     outline: none;
     background: rgba(0, 255, 160, 0.1);
 }
+
+/* Mobile Overrides for Social Icons */
+@media (max-width: 768px) {
+    .hero-footer {
+        position: relative !important;
+        bottom: auto !important;
+        margin-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .social-icon {
+        width: 40px !important;
+        height: 40px !important;
+    }
+}

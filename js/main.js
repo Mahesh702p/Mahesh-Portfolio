@@ -199,9 +199,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const artGallery = document.querySelector('.art-gallery-grid');
 
     if (expandArtBtn && artGallery) {
-        // Show button on mobile
+        // Show button on mobile and expand by default
         if (window.innerWidth <= 768) {
             expandArtBtn.style.display = 'block';
+            artGallery.classList.add('expanded');
+            expandArtBtn.classList.add('expanded');
+            expandArtBtn.textContent = 'Collapse Vault';
         }
 
         expandArtBtn.addEventListener('click', () => {

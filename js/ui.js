@@ -202,8 +202,11 @@ class PortfolioUI {
     if (skillsGrid) {
       skillsGrid.innerHTML = Object.entries(portfolioData.skills)
         .map(([category, skills]) => `
-          <div class="skill-category">
-            <h3 class="skill-category-title">[${category}]</h3>
+          <div class="skill-category collapsed">
+            <h3 class="skill-category-title" role="button" tabindex="0" aria-expanded="false">
+              <span>[${category}]</span>
+              <span class="category-toggle-icon">+</span>
+            </h3>
             <ul class="skill-list">
               ${skills.map(skill => `
                 <li class="skill-item">
@@ -215,6 +218,27 @@ class PortfolioUI {
             </ul>
           </div>
         `).join('');
+
+      // Add click & keyboard toggle handlers for skill categories
+      skillsGrid.querySelectorAll('.skill-category-title').forEach(header => {
+        const toggleCategory = () => {
+          const category = header.closest('.skill-category');
+          if (category) {
+            const isCollapsed = category.classList.toggle('collapsed');
+            header.setAttribute('aria-expanded', !isCollapsed);
+            const icon = header.querySelector('.category-toggle-icon');
+            if (icon) icon.textContent = isCollapsed ? '+' : '-';
+          }
+        };
+
+        header.addEventListener('click', toggleCategory);
+        header.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleCategory();
+          }
+        });
+      });
     }
   }
 
@@ -256,17 +280,20 @@ class PortfolioUI {
       ...portfolioData.leadership.map(l => ({ ...l, type: 'Leadership' }))
     ];
 
-    experienceGrid.innerHTML = allWork.map((work, index) => `
-      <div class="project-card ${work.current ? 'project-highlight' : 'project-standard'}">
-        <div class="project-header">
-          <h3 class="project-title">${work.role}</h3>
-          ${work.current ? `
-            <span class="project-status project-status-active">active</span>
-          ` : ''}
+    experienceGrid.innerHTML = allWork.map((work) => `
+      <div class="project-card experience-card collapsed ${work.current ? 'project-highlight' : 'project-standard'}">
+        <div class="project-header experience-header" role="button" tabindex="0" aria-expanded="false">
+          <div>
+            <h3 class="project-title" style="margin-bottom: 2px;">${work.role}</h3>
+            <div style="color: #00ffa0; font-family: var(--font-mono); font-size: 0.85rem;">@${work.organization}</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            ${work.current ? `<span class="project-status project-status-active">active</span>` : ''}
+            <span class="exp-toggle-icon">+</span>
+          </div>
         </div>
-        <div class="project-body">
-          <div style="color: #00ffa0; margin-bottom: var(--space-sm); font-family: var(--font-mono);">@ ${work.organization}</div>
-          <div style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: var(--space-md);">${work.duration}</div>
+        <div class="project-body experience-body">
+          <div style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: var(--space-sm);">${work.duration}</div>
           <p class="project-description">${work.description}</p>
           ${work.responsibilities ? `
             <div class="project-features">
@@ -279,6 +306,27 @@ class PortfolioUI {
         </div>
       </div>
     `).join('');
+
+    // Toggle event listeners for experience cards
+    experienceGrid.querySelectorAll('.experience-header').forEach(header => {
+      const toggleExp = () => {
+        const card = header.closest('.experience-card');
+        if (card) {
+          const isCollapsed = card.classList.toggle('collapsed');
+          header.setAttribute('aria-expanded', !isCollapsed);
+          const icon = header.querySelector('.exp-toggle-icon');
+          if (icon) icon.textContent = isCollapsed ? '+' : '-';
+        }
+      };
+
+      header.addEventListener('click', toggleExp);
+      header.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleExp();
+        }
+      });
+    });
   }
 
   renderAchievements() {

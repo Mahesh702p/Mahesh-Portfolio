@@ -612,29 +612,58 @@ html {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 64px;
-        left: 0;
-        width: 100%;
-        background-color: #0b181b;
-        padding: var(--space-xl);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        gap: var(--space-lg);
+        top: 60px; /* just below navbar */
+        left: 1rem;
+        width: 180px;
+        background-color: rgba(11, 24, 27, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: var(--space-md);
+        border: 1px solid rgba(0, 255, 160, 0.2);
+        border-radius: var(--radius-lg);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        gap: var(--space-xs);
+        z-index: 1000;
+        transform-origin: top left;
     }
 
     .nav-link {
-        font-size: 1rem;
-        padding: var(--space-sm) 0;
-        text-align: center;
+        font-size: 0.85rem;
+        padding: var(--space-sm) var(--space-md);
+        text-align: left;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        border-radius: var(--radius-sm);
+        transition: background 0.3s ease;
+    }
+    
+    .nav-link:active {
+        background: rgba(0, 255, 160, 0.1);
+    }
+    
+    .nav-link.active::after {
+        display: none !important;
+    }
+
+    @keyframes popBubble {
+        0% { opacity: 0; transform: scale(0.9) translateY(-10px); }
+        100% { opacity: 1; transform: scale(1) translateY(0); }
     }
 
     .nav-links.active {
         display: flex;
-        animation: slideDown 0.3s ease-out;
+        animation: popBubble 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
+    #oneko-toggle {
+        display: none !important;
+    }
+
+    /* Make sure Resume is visible on mobile */
     #oneko-resume-btn {
-        display: none;
+        display: flex !important;
+        padding: 4px 12px !important;
+        font-size: 0.75rem !important;
     }
 
     /* Hide terminal on mobile */
@@ -643,24 +672,8 @@ html {
         display: none !important;
     }
 
-    /* Make ASCII name much smaller for mobile */
-    .ascii-container {
-        display: flex !important;
-        margin-bottom: var(--space-sm);
-        transform: scale(0.35);
-        transform-origin: top center;
-        margin-top: -30px;
-    }
 
-    .ascii-name-main {
-        font-size: 0.35rem !important;
-        line-height: 0.9 !important;
-    }
 
-    .ascii-name-sub {
-        font-size: 0.28rem !important;
-        line-height: 0.9 !important;
-    }
 
     /* Hero section adjustments */
     .hero-content {
@@ -736,30 +749,40 @@ html {
 
     /* Art gallery - hide initially, show with expand button */
     .art-gallery-grid {
-        flex-direction: column;
-        gap: var(--space-lg);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
+        flex-direction: row;
+        gap: var(--space-md);
+        display: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        padding: var(--space-base);
+        scrollbar-width: none; /* Hide scrollbar for cleaner look */
+    }
+    
+    .art-gallery-grid::-webkit-scrollbar {
+        display: none;
     }
 
     .art-gallery-grid.expanded {
-        max-height: 5000px;
+        display: flex;
+        animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .art-card {
-        min-width: 100%;
-        width: 100%;
+        min-width: 85%;
+        width: 85%;
+        flex: 0 0 auto;
+        scroll-snap-align: center;
     }
 
     .art-card.has-rotation {
-        min-width: 100%;
+        min-width: 85%;
     }
 
     .art-card.has-rotation .art-image-container {
         width: 100%;
         height: auto;
-        min-height: 200px;
+        min-height: 250px;
     }
 
     .art-card.has-rotation .art-image-container img {
@@ -769,7 +792,7 @@ html {
 
     .art-content {
         min-height: auto;
-        padding: var(--space-base);
+        padding: 0;
     }
 
     /* Mobile expand button for art */
@@ -802,12 +825,11 @@ html {
 }
 
 @keyframes slideDown {
-    from {
+    0% {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-20px);
     }
-
-    to {
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
@@ -1096,5 +1118,372 @@ html {
 @media (max-width: 768px) {
     .main-footer {
         padding: var(--space-xl) 0 var(--space-2xl);
+    }
+}
+
+/* ===== Desktop Fallback for Accordions ===== */
+@media (min-width: 769px) {
+    .skill-category.collapsed .skill-list {
+        display: grid !important;
+    }
+    .experience-card.collapsed .experience-body {
+        display: block !important;
+    }
+    .category-toggle-icon, .exp-toggle-icon {
+        display: none !important;
+    }
+    .skill-category-title, .experience-header {
+        pointer-events: none !important;
+        cursor: default !important;
+    }
+}
+
+/* ===== Mobile-Specific Overrides (V2) ===== */
+@media (max-width: 768px) {
+    /* 3-Bar Hamburger Menu */
+    .mobile-menu-btn {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 38px !important;
+        height: 38px !important;
+        background: rgba(0, 255, 160, 0.08) !important;
+        border: 1px solid rgba(0, 255, 160, 0.25) !important;
+        border-radius: 8px !important;
+        padding: 0 !important;
+        gap: 4px !important; /* Add gap between the 3 bars */
+    }
+
+    .mobile-menu-btn span {
+        display: block !important;
+        width: 18px !important;
+        height: 2px !important;
+        background: #00ffa0 !important;
+        border-radius: 2px !important;
+        margin: 0 !important;
+        position: static !important;
+    }
+
+    /* Hero Section Full Screen */
+    #hero {
+        padding-top: 80px !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        position: relative !important;
+    }
+    
+    .hero-container, .hero-content {
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding-bottom: 6rem !important; /* Space for absolute footer */
+    }
+
+    .hero-footer {
+        position: absolute !important;
+        bottom: 0.5rem !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Reduce boldness of social icons on mobile */
+    .social-icon {
+        border-width: 1px !important;
+        width: 36px !important;
+        height: 36px !important;
+    }
+    
+    .social-icon svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    /* Larger ASCII Title Mahesh Patel */
+    .ascii-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-bottom: 2rem !important;
+        margin-top: 4rem !important; /* Shift content down */
+        overflow: visible !important;
+    }
+
+    .ascii-name-main {
+        font-size: 0.70rem !important;
+        line-height: 1.1 !important; 
+        color: #00ffa0 !important;
+        text-shadow: 0 0 12px rgba(0, 255, 160, 0.4) !important;
+        overflow: visible !important;
+    }
+
+    .ascii-name-sub {
+        font-size: 0.55rem !important;
+        line-height: 1.1 !important;
+        color: #00ffa0 !important;
+        text-shadow: 0 0 10px rgba(0, 255, 160, 0.3) !important;
+        overflow: visible !important;
+    }
+
+    /* Center dynamic typer */
+    .hero-subtitle {
+        text-align: center !important;
+        margin-bottom: 1.5rem !important;
+        font-size: 1.25rem !important; /* Override the p tag 0.9rem */
+    }
+
+    .hero-prompt {
+        display: flex !important;
+        font-size: 0.9rem !important;
+        line-height: 1.55 !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 2rem !important;
+        padding: 0 1rem !important; /* Add horizontal padding */
+    }
+    
+    .hero-prompt span:last-child {
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        display: block !important;
+        flex: 1 !important;
+    }
+
+    /* Mobile Accordion Spacing & Styling */
+    .skills-grid {
+        gap: var(--space-sm) !important;
+    }
+    
+    /* Reduce gap between experience and project rectangles */
+    .projects-grid {
+        gap: var(--space-sm) !important;
+    }
+
+    /* Reduce height of the rectangles */
+    .project-header, .experience-header {
+        padding: var(--space-sm) var(--space-md) !important;
+    }
+
+    .skill-category {
+        margin-bottom: 0 !important;
+        border: 1px solid rgba(0, 255, 160, 0.1) !important;
+        border-radius: var(--radius-md) !important;
+        padding: var(--space-base) !important;
+        background: rgba(0, 255, 160, 0.02) !important;
+    }
+    
+    .skill-category-title {
+        margin-bottom: 0 !important;
+        justify-content: space-between !important;
+    }
+
+    /* Adjust font size for skill category titles */
+    .skill-category-title span {
+        font-size: 0.9rem !important; /* Increased from 0.8rem */
+    }
+    
+    .skill-category:not(.collapsed) .skill-category-title {
+        margin-bottom: var(--space-base) !important;
+    }
+
+    /* Collapsible Skills & Experience */
+    .skill-category.collapsed .skill-list,
+    .experience-card.collapsed .experience-body {
+        display: none !important;
+    }
+
+    .category-toggle-icon,
+    .exp-toggle-icon {
+        display: inline-block !important;
+        font-size: 1rem !important; /* Matches 0.9rem text better */
+        font-weight: bold !important;
+        color: #00ffa0 !important;
+    }
+    
+    .experience-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        cursor: pointer !important;
+    }
+
+    .experience-header > div:first-child {
+        flex: 1 !important;
+        padding-right: var(--space-md) !important;
+    }
+
+    /* Aggressive Font Size Override for all section content on mobile */
+    .experience-header div[style*="font-size"],
+    .project-description, .project-card p, .tree-details,
+    .timeline-description, .timeline-responsibilities li, .timeline-degree, .timeline-duration,
+    .log-description, .log-date, .skill-badge,
+    .cli-education-output, .cli-edu-label, .cli-edu-value,
+    .tree-role, .project-title, .log-title,
+    p, .text-secondary, li {
+        font-size: 0.9rem !important;
+        line-height: 1.55 !important;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+    }
+
+    /* Specifically target projects description */
+    .tree-desc {
+        font-size: 0.82rem !important;
+        line-height: 1.55 !important;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        padding-right: 1.25rem !important;
+    }
+    
+    /* Achievements Layout Fixes */
+    .log-entry {
+        margin-bottom: 0.5rem !important;
+        border-radius: var(--radius-sm) !important;
+        padding: var(--space-sm) !important;
+    }
+    
+    .log-header {
+        flex-wrap: nowrap !important;
+        align-items: flex-start !important;
+        gap: 0.5rem !important;
+    }
+    
+    .log-date, .log-icon {
+        width: auto !important;
+        margin-top: 2px !important;
+    }
+    
+    .log-title {
+        font-size: 0.9rem !important;
+        flex: 1 !important;
+        line-height: 1.4 !important;
+    }
+    
+    .log-body {
+        padding-left: 0 !important;
+        margin-top: 0.25rem !important;
+    }
+    
+    /* Tech tags specifically smaller */
+    .tech-tag {
+        font-size: 0.75rem !important;
+        padding: 0.2rem 0.4rem !important;
+    }
+
+    /* Hide the active badge on mobile */
+    .project-status {
+        display: none !important;
+    }
+
+    /* Fix eductl alignment on mobile */
+    .cli-edu-label {
+        width: 110px !important;
+    }
+    .cli-edu-value {
+        text-align: left !important;
+    }
+
+    /* Keep ONLY main section titles larger */
+    h2, .section-title {
+        font-size: 1.25rem !important;
+    }
+
+    h3 {
+        font-size: 1.05rem !important;
+    }
+
+    /* Mobile art carousel (V2 overriding) */
+    .art-gallery-grid {
+        flex-direction: row !important;
+        gap: var(--space-md) !important;
+        display: none !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scroll-snap-type: x mandatory !important;
+        padding: var(--space-base) !important;
+        scrollbar-width: none !important;
+    }
+    
+    .art-gallery-grid::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .art-gallery-grid.expanded {
+        display: flex !important;
+    }
+
+    .art-card {
+        min-width: 85% !important;
+        width: 85% !important;
+        flex: 0 0 auto !important;
+        scroll-snap-align: center !important;
+    }
+
+    /* Make all image containers perfectly uniform */
+    .art-image-container, .art-card.has-rotation .art-image-container {
+        width: 100% !important;
+        height: 280px !important;
+        min-height: 280px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .art-image-container img, .art-card.has-rotation .art-image-container img {
+        max-height: 100% !important;
+        max-width: 100% !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    .art-content {
+        min-height: auto !important;
+        padding: 0 !important;
+    }
+    
+    /* Remove Image Viewer Title Bar */
+    .art-window .window-titlebar,
+    .mail-window .window-titlebar {
+        display: none !important;
+    }
+
+    /* Mail Section Layout Fixes */
+    .form-row {
+        align-items: flex-start !important; /* Align to top since 'To' has 2 lines now */
+    }
+
+    .form-label {
+        width: 70px !important;
+        min-width: 70px !important;
+        flex-shrink: 0 !important;
+        text-align: left !important;
+        padding-top: 4px !important; /* Align with input text */
+    }
+
+    .form-input-wrapper {
+        flex: 1 !important;
+        min-width: 0 !important; /* Prevent flex overflow */
+    }
+
+    .form-value {
+        display: block !important;
+        line-height: 1.4 !important;
+        padding-top: 4px !important;
+    }
+
+    .form-status {
+        color: var(--text-secondary) !important;
+    }
+
+    .form-textarea {
+        min-height: 120px !important;
+    }
+
+    /* Fix copyright alignment */
+    .copyright-text {
+        text-align: center !important;
     }
 }
