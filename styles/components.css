@@ -1212,10 +1212,12 @@ html {
         width: 100% !important;
         max-width: 100vw !important;
         box-sizing: border-box !important;
+        transform: scale(0.9) !important; /* Extra safety scale factor */
+        transform-origin: center center !important;
     }
 
     .ascii-name-main {
-        font-size: 2.2vw !important; /* Shrunk slightly more to ensure strict fit on all devices */
+        font-size: 1.5vw !important; /* Drastically shrunk to bypass Android min-font-size issues */
         line-height: 1.1 !important; 
         color: #00ffa0 !important;
         text-shadow: 0 0 12px rgba(0, 255, 160, 0.4) !important;
@@ -1223,7 +1225,7 @@ html {
     }
 
     .ascii-name-sub {
-        font-size: 1.8vw !important;
+        font-size: 1.2vw !important;
         line-height: 1.1 !important;
         color: #00ffa0 !important;
         text-shadow: 0 0 10px rgba(0, 255, 160, 0.3) !important;
