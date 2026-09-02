@@ -1215,7 +1215,7 @@ html {
     }
 
     .ascii-name-main {
-        font-size: 2.7vw !important; /* Forces strict fit regardless of mobile font rendering */
+        font-size: 2.2vw !important; /* Shrunk slightly more to ensure strict fit on all devices */
         line-height: 1.1 !important; 
         color: #00ffa0 !important;
         text-shadow: 0 0 12px rgba(0, 255, 160, 0.4) !important;
@@ -1223,7 +1223,7 @@ html {
     }
 
     .ascii-name-sub {
-        font-size: 2.2vw !important;
+        font-size: 1.8vw !important;
         line-height: 1.1 !important;
         color: #00ffa0 !important;
         text-shadow: 0 0 10px rgba(0, 255, 160, 0.3) !important;
@@ -1453,6 +1453,10 @@ html {
     }
 
     /* Mail Section Layout Fixes */
+    .mail-content {
+        padding: var(--space-md) var(--space-sm) !important;
+    }
+
     .form-row {
         align-items: flex-start !important; /* Align to top since 'To' has 2 lines now */
     }
@@ -1474,10 +1478,12 @@ html {
         display: block !important;
         line-height: 1.4 !important;
         padding-top: 4px !important;
+        word-break: break-all !important; /* Prevents long emails from getting cut off */
     }
 
     .form-status {
         color: var(--text-secondary) !important;
+        font-size: 0.8rem !important;
     }
 
     .form-textarea {
