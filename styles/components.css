@@ -1215,18 +1215,18 @@ html {
     }
 
     .ascii-name-main {
-        font-size: 12px !important; /* Fixed size prevents sub-pixel gaps */
-        line-height: 0.95 !important; /* Pulls blocks vertically tight */
-        letter-spacing: -1px !important; /* Guarantees it fits within 320px even if Android clamps font to 12px */
+        font-size: 1.7vw !important; /* 1.7 * 51 chars = 86.7vw (Fits perfectly!) */
+        line-height: 0.95 !important; /* 5% vertical overlap kills vertical gaps */
+        letter-spacing: -0.05em !important; /* 5% horizontal overlap kills horizontal gaps */
         color: #00ffa0 !important;
         text-shadow: 0 0 12px rgba(0, 255, 160, 0.4) !important;
-        -webkit-text-stroke: 0 !important; /* Remove stroke hack */
+        -webkit-text-stroke: 0 !important;
     }
 
     .ascii-name-sub {
-        font-size: 10px !important;
+        font-size: 1.35vw !important;
         line-height: 0.95 !important;
-        letter-spacing: -1px !important;
+        letter-spacing: -0.05em !important;
         color: #00ffa0 !important;
         text-shadow: 0 0 10px rgba(0, 255, 160, 0.3) !important;
         -webkit-text-stroke: 0 !important;
