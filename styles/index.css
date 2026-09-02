@@ -297,6 +297,18 @@
    }
 
    /* ===== Buttons ===== */
+   .ascii-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+   }
+
+   .mobile-neon-title {
+    display: none; /* Hidden on desktop, shown on mobile */
+   }
+
    .btn {
      display: inline-flex;
      align-items: center;

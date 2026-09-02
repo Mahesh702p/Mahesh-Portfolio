@@ -1202,34 +1202,24 @@ html {
         height: 18px !important;
     }
 
+    /* Hide ASCII Art entirely on mobile to prevent Android font scaling bugs */
     .ascii-container {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        margin-bottom: 2rem !important;
-        margin-top: 4rem !important;
-        overflow: hidden !important;
-        width: 100vw !important;
-        max-width: 100vw !important;
-        box-sizing: border-box !important;
+        display: none !important;
     }
 
-    .ascii-name-main {
-        font-size: 1.7vw !important; /* 1.7 * 51 chars = 86.7vw (Fits perfectly!) */
-        line-height: 0.95 !important; /* 5% vertical overlap kills vertical gaps */
-        letter-spacing: -0.05em !important; /* 5% horizontal overlap kills horizontal gaps */
-        color: #00ffa0 !important;
-        text-shadow: 0 0 12px rgba(0, 255, 160, 0.4) !important;
-        -webkit-text-stroke: 0 !important;
-    }
-
-    .ascii-name-sub {
-        font-size: 1.35vw !important;
-        line-height: 0.95 !important;
-        letter-spacing: -0.05em !important;
-        color: #00ffa0 !important;
-        text-shadow: 0 0 10px rgba(0, 255, 160, 0.3) !important;
-        -webkit-text-stroke: 0 !important;
+    /* Show Normal Neon Font Title instead */
+    .mobile-neon-title {
+        display: block !important;
+        font-family: var(--font-mono) !important;
+        font-size: 3.5rem !important;
+        font-weight: 800 !important;
+        color: var(--accent-primary) !important;
+        text-align: center !important;
+        line-height: 1.1 !important;
+        margin-top: 5rem !important;
+        margin-bottom: 2.5rem !important;
+        text-shadow: 0 0 15px rgba(0, 255, 160, 0.5), 0 0 30px rgba(0, 255, 160, 0.3) !important;
+        letter-spacing: 2px !important;
     }
 
     /* Center dynamic typer */
